@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="64px" viewBox="0 0 40 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>pros_ico8</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="런칭페이지" transform="translate(-696.000000, -2415.000000)" stroke="#222829" stroke-width="2">
+            <g id="pros_ico8" transform="translate(697.000000, 2416.000000)">
+                <polyline id="Stroke-1" points="16 22 0 22 0 0 38 0 38 22 24 22"></polyline>
+                <path d="M10,54 L12,54" id="Stroke-3"></path>
+                <path d="M10,58 L12,58" id="Stroke-4"></path>
+                <g id="Group-23" transform="translate(3.000000, 3.000000)">
+                    <path d="M19,34 L19,26 C19,23 22,18 22,15 C22,13 21,11 19,11 C14,11 14,19 12,22 C10,25 6,32 6,36 L6,47" id="Stroke-5"></path>
+                    <path d="M24,47 L24,46 C24,40 30,35 30,30 C30,27 27,21 27,19" id="Stroke-7"></path>
+                    <path d="M9,19 C9,19 7,21 7,23 C7,25 9,27 9,27" id="Stroke-9"></path>
+                    <path d="M12,1 L32,1" id="Stroke-11"></path>
+                    <path d="M12,5 L23,5" id="Stroke-13"></path>
+                    <path d="M25,5 L32,5" id="Stroke-15"></path>
+                    <path d="M4,60 L4,48 C4,47.447 4.447,47 5,47 L25,47 C25.553,47 26,47.447 26,48 L26,60" id="Stroke-17"></path>
+                    <path d="M9,8 C9,8.552 8.553,9 8,9 L2,9 C1.447,9 1,8.552 1,8 L1,2 C1,1.448 1.447,1 2,1 L8,1 C8.553,1 9,1.448 9,2 L9,8 Z" id="Stroke-19"></path>
+                    <path d="M0,13 L10,13" id="Stroke-21"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

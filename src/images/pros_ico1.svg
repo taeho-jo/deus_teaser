@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="56px" viewBox="0 0 64 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>pros_ico1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="런칭페이지" transform="translate(-461.000000, -2592.000000)" stroke="#222829" stroke-width="2">
+            <g id="pros_ico1" transform="translate(462.000000, 2593.000000)">
+                <polygon id="Stroke-1" points="0 54 62 54 62 8 0 8"></polygon>
+                <polygon id="Stroke-3" points="18 22 24 22 24 16 18 16"></polygon>
+                <polygon id="Stroke-4" points="28 22 34 22 34 16 28 16"></polygon>
+                <polygon id="Stroke-5" points="38 22 44 22 44 16 38 16"></polygon>
+                <polygon id="Stroke-6" points="48 22 54 22 54 16 48 16"></polygon>
+                <polygon id="Stroke-7" points="8 32 14 32 14 26 8 26"></polygon>
+                <polygon id="Stroke-8" points="18 32 24 32 24 26 18 26"></polygon>
+                <polygon id="Stroke-9" points="28 32 34 32 34 26 28 26"></polygon>
+                <polygon id="Stroke-10" points="48 32 54 32 54 26 48 26"></polygon>
+                <polygon id="Stroke-11" points="8 42 14 42 14 36 8 36"></polygon>
+                <polygon id="Stroke-12" points="28 42 34 42 34 36 28 36"></polygon>
+                <polygon id="Stroke-13" points="38 42 44 42 44 36 38 36"></polygon>
+                <polygon id="Stroke-14" points="48 42 54 42 54 36 48 36"></polygon>
+                <polyline id="Stroke-15" points="0 8 0 0 62 0 62 8"></polyline>
+                <path d="M33,4 L35,4" id="Stroke-17"></path>
+                <path d="M37,4 L39,4" id="Stroke-18"></path>
+                <path d="M41,4 L43,4" id="Stroke-19"></path>
+                <path d="M19,4 L21,4" id="Stroke-20"></path>
+                <path d="M23,4 L25,4" id="Stroke-21"></path>
+                <path d="M27,4 L29,4" id="Stroke-22"></path>
+                <path d="M14,16 L8,22" id="Stroke-23"></path>
+                <path d="M8,16 L14,22" id="Stroke-24"></path>
+                <path d="M24,36 L18,42" id="Stroke-25"></path>
+                <path d="M18,36 L24,42" id="Stroke-26"></path>
+                <path d="M44,26 L38,32" id="Stroke-27"></path>
+                <path d="M38,26 L44,32" id="Stroke-28"></path>
+                <path d="M62,50 L0,50" id="Stroke-29"></path>
+            </g>
+        </g>
+    </g>
+</svg>

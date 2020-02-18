@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>pros_ico6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="런칭페이지" transform="translate(-684.000000, -2415.000000)" stroke="#222829" stroke-width="2">
+            <g id="pros_ico6" transform="translate(684.000000, 2416.000000)">
+                <polygon id="Stroke-1" points="5 62 17 62 17 58 5 58"></polygon>
+                <path d="M43,21 C43,26.523 38.523,31 33,31 C27.477,31 23,26.523 23,21 C23,15.478 27.477,11 33,11 C38.523,11 43,15.478 43,21 Z" id="Stroke-3"></path>
+                <polyline id="Stroke-4" points="9 5 47 5 63 21 47 37 9 37"></polyline>
+                <polyline id="Stroke-5" points="38 18 32 24 28 20"></polyline>
+                <path d="M16,21 L18,21" id="Stroke-6"></path>
+                <path d="M16,17 L18,17" id="Stroke-7"></path>
+                <path d="M16,25 L18,25" id="Stroke-8"></path>
+                <path d="M13,5 L13,2 C13,0.896 12.104,0 11,0 C9.896,0 9,0.896 9,2 L9,58 L13,58 L13,37" id="Stroke-9"></path>
+                <path d="M13,34 L13,8" id="Stroke-10"></path>
+                <path d="M0,62 L64,62" id="Stroke-11"></path>
+            </g>
+        </g>
+    </g>
+</svg>
