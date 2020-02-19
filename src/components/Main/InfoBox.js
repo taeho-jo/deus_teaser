@@ -5,24 +5,37 @@ import icon1 from "../../images/pros_ico1.svg";
 import icon2 from "../../images/pros_ico2.svg";
 import icon3 from "../../images/pros_ico3.svg";
 import icon4 from "../../images/pros_ico4.svg";
+import { withTranslation } from "react-i18next";
 
-const InfoBox = () => {
+const InfoBox = ({ t }) => {
   return (
     <Container>
-      <Box width="220px" url={icon1} text="Trusted travel plans and products" />
-      <Box width="220px" url={icon2} text="The lowest price guaranteed" />
-      <Box width="220px" url={icon3} text="Multilingual customer care" />
-      <Box width="220px" url={icon4} text="24 hour cancellation policy" />
+      <Div>
+        <Box width="220px" url={icon1} text={t("info1")} />
+        <Box width="220px" url={icon2} text={t("info2")} />
+        <Box width="220px" url={icon3} text={t("info3")} />
+        <Box width="220px" url={icon4} text={t("info4")} />
+      </Div>
     </Container>
   );
 };
 
-export default InfoBox;
+export default withTranslation()(InfoBox);
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid orange; */
+`;
+
+const Div = styled.div`
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  /* border: 1px solid orange; */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 30px;
+  }
 `;

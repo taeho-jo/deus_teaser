@@ -1,26 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import Inputs from "./Contact/Inputs";
+import { withTranslation } from "react-i18next";
 
-const Contact = () => {
+const Contact = ({ t }) => {
   return (
     <Container>
       <MainContainer>
-        <TitleBox>
-          <Title>Contact</Title>
-          <Content>
-            Feel free to get in touch with us, if you have any question.
-          </Content>
-        </TitleBox>
-        <InputBox>
-          <Inputs />
-        </InputBox>
+        <Div>
+          <TitleBox>
+            <Title>{t("contact")}</Title>
+            <Content>{t("contactText")}</Content>
+          </TitleBox>
+          <InputBox>
+            <Inputs />
+          </InputBox>
+        </Div>
       </MainContainer>
     </Container>
   );
 };
 
-export default Contact;
+export default withTranslation()(Contact);
 
 const Container = styled.div`
   width: 100%;
@@ -30,17 +31,31 @@ const Container = styled.div`
 `;
 
 const MainContainer = styled.div`
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  /* width: 100%;
+  max-width: 1100px; */
+  justify-content: center;
   /* border: 1px solid salmon; */
   display: flex;
   padding-top: 60px;
 `;
 
+const Div = styled.div`
+  width: 100%;
+  max-width: 1100px;
+  /* border: 1px solid salmon; */
+  display: flex;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+`;
+
 const TitleBox = styled.div`
   /* border: 1px solid blue; */
   width: 50%;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 const Title = styled.h1`
   font-family: visbyHeavy;
@@ -59,4 +74,8 @@ const Content = styled.p`
 const InputBox = styled.div`
   width: 50%;
   /* border: 1px solid darkgreen; */
+  @media (max-width: 1024px) {
+    margin-top: 30px;
+    width: 100%;
+  }
 `;

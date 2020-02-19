@@ -17,29 +17,35 @@ import fetchAPI from "../../Utils/fetch";
 import error from "../../images/error.png";
 import check from "../../images/check.png";
 import LogoImg from "../../images/logo.svg";
-
+import { withTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-const MainTraveler = () => {
+const MainTraveler = ({ t }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState(null);
   const [traveller, setTraveller] = useState(1);
   const [provier, setProvider] = useState(0);
 
+  let history = useHistory();
+  const movePage = () => {
+    history.push("/partner");
+  };
+
   const submit = () => {
+    console.log("sd");
     if (email === null) {
       setIsError(true);
     } else {
-      fetchAPI("http://_____________________", {
+      fetchAPI("http://10.58.0.131:8000/user/subscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
           email: email,
-          is_provider: provier,
-          is_traveller: traveller
+          is_supplier: provier,
+          is_traveler: traveller
         })
       }).then(res => {
         if (res.message === "SUCCESS") {
@@ -50,6 +56,11 @@ const MainTraveler = () => {
       });
     }
     setEmail("");
+  };
+
+  const changeEmail = e => {
+    setEmail(e.target.value);
+    console.log(email);
   };
 
   const closed = () => {
@@ -68,53 +79,49 @@ const MainTraveler = () => {
       setProvider(1);
     }
   }, []);
-  let history = useHistory();
-  const movePage = () => {
-    history.push("/partner");
-  };
 
   return (
     <>
       <TravelerLayout
         LogoImg={LogoImg}
         onClick={movePage}
-        text="Be a Partner"
+        text={t("bePartner")}
       />
       <Top
-        firsTitle="There are hundreds of challenges"
-        secondTitle="around our lives."
-        subTitle="Well, life is short, isn't it?"
-        content="DeusAdventures is giving an effort to encourage more people to have
-          better and bold adventures."
+        firsTitle={t("mainTitle")}
+        secondTitle={t("mainTitle.2")}
+        subTitle={t("mainSubTitle")}
+        content={t("mainContent")}
       />
       <Vid />
       <Mid
-        firstTitle="Dreaming of Adventures?"
-        secondTitle="You are right to be here!"
-        subTitle="But it is not as easy as you think to prepare"
-        content="Get a hint from DeusAdventures' travel plans which have been proven"
-        firstContent="by thousands of real travels."
-        secondContent="It will be just perfect travel even if you just follows our presets."
+        firstTitle={t("midTitle")}
+        secondTitle={t("midSecondTitle")}
+        subTitle={t("midSubTitle")}
+        content={t("content")}
+        firstContent={t("firstContent")}
+        secondContent={t("secondContent")}
         background={firstImg}
       />
       <SecondMid />
       <InfoBox />
       <Contact />
       <Mid
-        firstTitle="So are you ready?"
-        subTitle="Be ready for great adventures!"
-        content="Through the various travel plans and products from DeusAdventures,"
-        firstContent="Do access your own trip with confidence."
+        firstTitle={t("ready")}
+        subTitle={t("readyAdv")}
+        content={t("readyText")}
+        firstContent={t("readyText2")}
         background={ready}
       />
       <NextPage
+        href="/partner"
         partner={partner}
-        title="Be a Partner"
-        content="Join us for a greater journey!"
-        button="Become a Partner"
+        title={t("bePartner")}
+        content={t("join")}
+        button={t("joinPartner")}
       />
-      <Footer text="Be a Partner" />
-      <FixedBar onClick={submit} />
+      <Footer href="/partner" text={t("bePartner")} />
+      <FixedBar onChange={changeEmail} onClick={submit} />
       {isClicked && (
         <Modal
           error="Completed"
@@ -138,53 +145,4 @@ const MainTraveler = () => {
   );
 };
 
-export default MainTraveler;
-
-// const Input = styled.input`
-//   display: block;
-// `;
-// const TextBox = styled.textarea``;
-// <Input vlaue={name} name="name" onChange={this.onChange}></Input>
-//         <Input vlaue={phone} name="phone" onChange={this.onChange}></Input>
-//         <Input vlaue={email} name="email" onChange={this.onChange}></Input>
-//         <TextBox
-//           vlaue={content}
-//           name="content"
-//           onChange={this.onChange}
-//         ></TextBox>
-//         <button onClick={this.onClick}>제출</button>
-
-// constructor(props) {
-//   super(props);
-//   this.state = {
-//     name: "",
-//     phone: "",
-//     email: "",
-//     content: ""
-//   };
-// }
-// onChange = e => {
-//   this.setState({
-//     [e.target.name]: e.target.value
-//   });
-//   console.log(this.state.name);
-//   console.log(this.state.phone);
-//   console.log(this.state.email);
-//   console.log(this.state.content);
-// };
-// onClick = () => {
-//   fetch("http://10.58.6.175:8000/user/contact", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({
-//       name: this.state.name,
-//       phone_number: this.state.phone,
-//       email: this.state.email,
-//       content: this.state.content,
-//       is_traveller: true,
-//       is_provider: false
-//     })
-//   });
-// };
+export default withTranslation()(MainTraveler);

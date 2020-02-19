@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/reset.scss";
 import Routes from "./Router";
 import { GlobalStyles } from "./styles/GlobalStyles";
+import "./lang/i18n";
 
 ReactDOM.render(
   <>

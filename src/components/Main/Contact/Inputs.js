@@ -4,8 +4,9 @@ import Modal from "../../Modal/Modal";
 import fetchAPI from "../../../Utils/fetch";
 import error from "../../../images/error.png";
 import check from "../../../images/check.png";
+import { withTranslation } from "react-i18next";
 
-const Inputs = ({ marginTop }) => {
+const Inputs = ({ marginTop, t }) => {
   const [name, setName] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [email, setEmail] = useState(null);
@@ -41,7 +42,7 @@ const Inputs = ({ marginTop }) => {
     if (name === null || email === null || content === null) {
       setIsError(true);
     } else {
-      fetchAPI("http://172.20.10.7:8000/user/contact", {
+      fetchAPI("http://10.58.0.131:8000/user/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -82,31 +83,30 @@ const Inputs = ({ marginTop }) => {
   return (
     <>
       <Container>
-        <InputName marginTop={marginTop}>Name</InputName>
-
+        <InputName marginTop={marginTop}>{t("name")}</InputName>
         <Input
           value={name}
           onChange={changeName}
-          placeholder="Your Name..."
-        ></Input>
+          placeholder={t("namePlaceholder")}
+        />
 
-        <InputName marginTop="30px">Phone Number</InputName>
+        <InputName marginTop="30px">{t("phone")}</InputName>
         <Input
           value={phoneNumber}
           onChange={changePhoneNumber}
-          placeholder="Your Phone Number..."
+          placeholder={t("phonePlaceholder")}
         ></Input>
 
-        <InputName marginTop="30px">Email</InputName>
+        <InputName marginTop="30px">{t("email")}</InputName>
         <Input
           value={email}
           onChange={changeEmaill}
-          placeholder="Your Email Address..."
+          placeholder={t("emailPlaceholder")}
         ></Input>
 
-        <InputName marginTop="30px">Content</InputName>
+        <InputName marginTop="30px">{t("contentText")}</InputName>
         <TextArea value={content} onChange={changeContent} />
-        <Button onClick={submit}>Send a Message</Button>
+        <Button onClick={submit}>{t("sendMsg")}</Button>
       </Container>
       {isClicked && (
         <Modal
@@ -131,7 +131,7 @@ const Inputs = ({ marginTop }) => {
   );
 };
 
-export default Inputs;
+export default withTranslation()(Inputs);
 
 const Container = styled.div`
   display: flex;
@@ -160,6 +160,11 @@ const Input = styled.input`
   ::placeholder {
     font-size: 13px;
   }
+  @media (max-width: 1024px) {
+    width: 100%;
+    /* padding: 15px; */
+    box-sizing: border-box;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -174,6 +179,10 @@ const TextArea = styled.textarea`
   :focus {
     border: 1px solid #00a3c8;
     transition: border 0.3s ease-in-out;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    box-sizing: border-box;
   }
 `;
 

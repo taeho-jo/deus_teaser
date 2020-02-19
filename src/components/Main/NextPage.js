@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const NextPage = ({ partner, title, content, button }) => {
+const NextPage = ({ partner, title, content, button, href }) => {
   return (
     <Container partner={partner}>
       <Box>
         <Title>{title}</Title>
         <Contents>{content}</Contents>
-        <Button>{button}</Button>
+        <Button href={href}>{button}</Button>
       </Box>
     </Container>
   );
@@ -48,7 +48,7 @@ const Contents = styled.p`
   font-family: "Noto Sans KR", sans-serif;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   padding: 20px;
   color: #fff;
   background: #00a3c8;
@@ -58,6 +58,7 @@ const Button = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
   :hover {
     background: #fff;
     color: #00a3c8;

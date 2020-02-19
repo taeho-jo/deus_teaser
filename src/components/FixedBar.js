@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
-const FixedBar = ({ onClick }) => {
+const FixedBar = ({ onClick, onChange, t }) => {
   const [day, setDay] = useState(null);
   const [hours, setHours] = useState(null);
   const [min, setMin] = useState(null);
@@ -43,28 +44,34 @@ const FixedBar = ({ onClick }) => {
   return (
     <Container>
       <MainContainer>
-        <CountDown>
-          <SubscribeText>We will be open soon..</SubscribeText>
-          <Div>
-            <CountDownBox>{day}</CountDownBox>&ensp;Day.
-            <CountDownBox>{hours}</CountDownBox>&ensp;Hrs.
-            <CountDownBox>{min}</CountDownBox>&ensp;Min.
-            <CountDownBox>{sec}</CountDownBox>&ensp;Sec.
-          </Div>
-        </CountDown>
-        <Subscribe>
-          <SubscribeText>Keep in touch with us!</SubscribeText>
-          <FlexBox>
-            <SubscribeInput placeholder="Your Email Address..." />
-            <Button onClick={onClick}>Subscribe</Button>
-          </FlexBox>
-        </Subscribe>
+        <Box>
+          <CountDown>
+            <SubscribeText>{t("openSoon")}</SubscribeText>
+            <Div>
+              <CountDownBox>{day}</CountDownBox>&ensp;{t("day")}.
+              <CountDownBox>{hours}</CountDownBox>&ensp;{t("Hours")}.
+              <CountDownBox>{min}</CountDownBox>&ensp;{t("min")}.
+              <CountDownBox>{sec}</CountDownBox>&ensp;{t("sec")}.
+            </Div>
+          </CountDown>
+          <Subscribe>
+            <SubscribeText>{t("touchUs")}</SubscribeText>
+            <FlexBox>
+              <SubscribeInput
+                onChange={onChange}
+                value={email}
+                placeholder={t("emailPlaceholder")}
+              />
+              <Button onClick={onClick}>Subscribe</Button>
+            </FlexBox>
+          </Subscribe>
+        </Box>
       </MainContainer>
     </Container>
   );
 };
 
-export default FixedBar;
+export default withTranslation()(FixedBar);
 
 const Container = styled.div`
   width: 100%;
@@ -76,12 +83,30 @@ const Container = styled.div`
 
 const MainContainer = styled.div`
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
+  justify-content: center;
 `;
+const Box = styled.div`
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 const CountDown = styled.div`
   width: 50%;
+  @media (max-width: 655px) {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Div = styled.div`
@@ -109,10 +134,21 @@ const CountDownBox = styled.div`
 `;
 const Subscribe = styled.div`
   width: 50%;
+  @media (max-width: 1024px) {
+    margin-top: 15px;
+  }
+  @media (max-width: 655px) {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const SubscribeText = styled.h1`
   font-family: visbyBold;
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 15px;
   color: #005a6f;
   letter-spacing: normal;
@@ -130,6 +166,9 @@ const SubscribeInput = styled.input`
   border: 1px solid #ebeded;
   font-size: 13px;
   border-radius: 5px;
+  @media (max-width: 655px) {
+    width: 100%;
+  }
 `;
 const Button = styled.button`
   margin-left: 15px;

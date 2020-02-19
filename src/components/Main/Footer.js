@@ -1,56 +1,96 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
-const Footer = ({ text }) => {
+const Footer = ({ href, text, t }) => {
   return (
     <Container>
-      <LeftBox>
-        <LeftContact>DeusAdventures. Inc.</LeftContact>
-        <LeftContact>Email LeftContact@deusadventures.com</LeftContact>
-        <LeftContact>Call/WhatsApp +82 10 4729 9389</LeftContact>
-      </LeftBox>
-      <RightBox>
-        <RightContact size="15px" color="#00a3c8" pointer="pointer">
-          {text}
-        </RightContact>
-        <RightContact size="13px;">
-          2019 Deus Adventures © All Rights Reserved.
-        </RightContact>
-      </RightBox>
+      <Div>
+        <LeftBox>
+          <LeftContact>DeusAdventures. Inc.</LeftContact>
+          <LeftContact>{t("email")} LeftContact@deusadventures.com</LeftContact>
+          <LeftContact>{t("phone")}/WhatsApp +82 10 4729 9389</LeftContact>
+        </LeftBox>
+        <RightBox>
+          <RightContact>
+            <A size="15px" pointer="pointer" color="#00a3c8" href={href}>
+              {text}
+            </A>
+          </RightContact>
+          <RightContact size="13px;">
+            2019 Deus Adventures © All Rights Reserved.
+          </RightContact>
+        </RightBox>
+      </Div>
     </Container>
   );
 };
 
-export default Footer;
+export default withTranslation()(Footer);
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const Div = styled.div`
+  width: 100%;
   max-width: 1100px;
   display: flex;
-  margin: 0 auto;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 const LeftBox = styled.div`
   width: 50%;
   font-size: 13px;
   letter-spacing: normal;
   padding: 60px 0;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 15px 0;
+  }
 `;
 const LeftContact = styled.p`
   font-family: "Noto Sans KR", sans-serif;
   vertical-align: baseline;
   margin-top: 10px;
+  letter-spacing: normal;
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const RightBox = styled.div`
   width: 50%;
   padding: 60px 0;
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 15px 0 50px 0;
+  }
 `;
 const RightContact = styled.p`
   text-align: right;
-  color: ${props => props.color};
   font-size: ${props => props.size};
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: normal;
   margin-top: 10px;
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  text-align: right;
+  color: ${props => props.color};
+  font-size: ${props => props.size};
+  font-family: "Noto Sans KR", sans-serif;
   cursor: ${props => props.pointer};
+  letter-spacing: normal;
+  :hover {
+    color: #025a6f;
+  }
 `;

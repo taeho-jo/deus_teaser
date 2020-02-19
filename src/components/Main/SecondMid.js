@@ -2,23 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import phone from "../../images/phone_img.png";
 import SecondMidText from "./SecondMidText/SecondMidText";
+import { withTranslation } from "react-i18next";
 
-const SecondMid = () => {
+const SecondMid = ({ t }) => {
   return (
     <Container>
       <SecondMidText
-        content="Usually, finding adveture travel online is not easy. Also, the price
-        and quality can not be expected."
-        content1="DeusAdventures prepares the required elements and providers for Adventure Travels around the world. You adventurers can just sit back and relax."
-        content2="DeusAdventures supervise whole product, travel plans, and transactions which is everything you are worrying about.
-        We assure you that Price Tranparency and Guaranteed Quality is strength of us."
+        content={t("content2")}
+        content1={t("content3")}
+        content2={t("content4")}
       />
       <ImageBox />
     </Container>
   );
 };
 
-export default SecondMid;
+export default withTranslation()(SecondMid);
 
 const Container = styled.div`
   background-color: #28292a;
