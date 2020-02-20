@@ -53,14 +53,12 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${props => props.marginTop};
-  /* border: 1px solid orange; */
 `;
 
 const Div = styled.div`
   width: 100%;
   max-width: 1100px;
   padding: 0 60px;
-  /* border: 1px solid orange; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -77,9 +75,7 @@ const TitleBox = styled.div`
   justify-content: space-between;
   @media (max-width: 1024px) {
     flex-direction: column;
-    /* padding: 30px; */
   }
-  /* border: 1px solid white; */
 `;
 const Title = styled.span`
   font-family: visbyHeavy;
@@ -89,7 +85,6 @@ const Title = styled.span`
   vertical-align: baseline;
   letter-spacing: normal;
   width: 50%;
-  /* border: 1px solid white; */
   @media (max-width: 1024px) {
     width: 100%;
   }
@@ -106,7 +101,6 @@ const Content = styled.p`
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: normal;
   vertical-align: baseline;
-  /* border: 1px solid white; */
   @media (max-width: 1024px) {
     width: 100%;
     margin-left: 0;

@@ -1,39 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
+import { withTranslation } from "react-i18next";
+
 import TravelerLayout from "../../components/Layout/TravelerLayout";
 import Top from "../../components/Main/Top";
-import Mid from "../../components/Main/Mid";
 import Vid from "../../components/Main/Vid";
+import Mid from "../../components/Main/Mid";
 import SecondMid from "../../components/Main/SecondMid";
 import InfoBox from "../../components/Main/InfoBox";
 import Contact from "../../components/Main/Contact";
-import firstImg from "../../images/first_img.jpg";
-import ready from "../../images/ready_img.jpg";
 import NextPage from "../../components/Main/NextPage";
-import partner from "../../images/head_img_partner.jpg";
 import Footer from "../../components/Main/Footer";
 import FixedBar from "../../components/FixedBar";
 import Modal from "../../components/Modal/Modal";
 import fetchAPI from "../../Utils/fetch";
+
+import ready from "../../images/ready_img.jpg";
+import partner from "../../images/head_img_partner.jpg";
 import error from "../../images/error.png";
+import firstImg from "../../images/first_img.jpg";
 import check from "../../images/check.png";
 import LogoImg from "../../images/logo.svg";
-import { withTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 
-const MainTraveler = ({ t }) => {
+const MainTraveler = ({ t, history }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState(null);
   const [traveller, setTraveller] = useState(1);
   const [provier, setProvider] = useState(0);
 
-  let history = useHistory();
+  // let history = useHistory();
   const movePage = () => {
     history.push("/partner");
   };
 
   const submit = () => {
-    console.log("sd");
     if (email === null) {
       setIsError(true);
     } else {
@@ -114,13 +115,13 @@ const MainTraveler = ({ t }) => {
         background={ready}
       />
       <NextPage
-        href="/partner"
+        href={movePage}
         partner={partner}
         title={t("bePartner")}
         content={t("join")}
         button={t("joinPartner")}
       />
-      <Footer href="/partner" text={t("bePartner")} />
+      <Footer href={movePage} text={t("bePartner")} />
       <FixedBar onChange={changeEmail} onClick={submit} />
       {isClicked && (
         <Modal
@@ -145,4 +146,4 @@ const MainTraveler = ({ t }) => {
   );
 };
 
-export default withTranslation()(MainTraveler);
+export default withTranslation()(withRouter(MainTraveler));

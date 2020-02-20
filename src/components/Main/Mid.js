@@ -37,10 +37,8 @@ const Mid = ({
 export default Mid;
 
 const Container = styled.div`
-  /* border: 1px solid red; */
   padding: 60px 60px;
   display: flex;
-  /* max-width: 1100px; */
   justify-content: center;
   align-items: center;
   @media (max-width: 1024px) {
@@ -49,21 +47,17 @@ const Container = styled.div`
 `;
 
 const Div = styled.div`
-  /* border: 1px solid blue; */
   width: 100%;
   max-width: 1100px;
   display: flex;
   @media (max-width: 1024px) {
     flex-direction: column;
-    /* border: 2px solid orange; */
   }
 `;
 
 const TextContainer = styled.div`
-  /* border: 1px solid black; */
   width: 100%;
   max-width: 50%;
-  /* border: 1px solid black; */
   @media (max-width: 1024px) {
     max-width: 100%;
   }
@@ -103,12 +97,10 @@ const ImageContainer = styled.div`
   width: 50%;
   height: 450px;
   margin-left: 100px;
-  /* border: 1px solid black; */
   background-image: url(${props => props.background});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  /* border: 1px solid green; */
   @media (max-width: 1024px) {
     width: 100%;
     margin-left: 0;

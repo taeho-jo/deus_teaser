@@ -21,19 +21,16 @@ const Container = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
     padding: 20px 0;
-    /* display: block; */
     margin-top: 15px;
   }
 `;
 
 const IconBox = styled.img`
   margin-bottom: 15px;
-  /* border: 1px solid black; */
 `;
 const Text = styled.h1`
   line-height: 30px;
   font-size: 15px;
-  /* border: 1px solid black; */
   text-align: center;
   letter-spacing: normal;
 `;

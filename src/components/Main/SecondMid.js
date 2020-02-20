@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import phone from "../../images/phone_img.png";
-import SecondMidText from "./SecondMidText/SecondMidText";
 import { withTranslation } from "react-i18next";
+
+import SecondMidText from "./SecondMidText/SecondMidText";
+
+import phone from "../../images/phone_img.png";
 
 const SecondMid = ({ t }) => {
   return (

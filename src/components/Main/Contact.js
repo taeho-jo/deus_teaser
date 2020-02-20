@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Inputs from "./Contact/Inputs";
 import { withTranslation } from "react-i18next";
+
+import Inputs from "./Contact/Inputs";
 
 const Contact = ({ t }) => {
   return (
@@ -31,10 +32,7 @@ const Container = styled.div`
 `;
 
 const MainContainer = styled.div`
-  /* width: 100%;
-  max-width: 1100px; */
   justify-content: center;
-  /* border: 1px solid salmon; */
   display: flex;
   padding-top: 60px;
 `;
@@ -42,7 +40,6 @@ const MainContainer = styled.div`
 const Div = styled.div`
   width: 100%;
   max-width: 1100px;
-  /* border: 1px solid salmon; */
   display: flex;
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -51,7 +48,6 @@ const Div = styled.div`
 `;
 
 const TitleBox = styled.div`
-  /* border: 1px solid blue; */
   width: 50%;
   @media (max-width: 1024px) {
     width: 100%;
@@ -73,7 +69,6 @@ const Content = styled.p`
 `;
 const InputBox = styled.div`
   width: 50%;
-  /* border: 1px solid darkgreen; */
   @media (max-width: 1024px) {
     margin-top: 30px;
     width: 100%;

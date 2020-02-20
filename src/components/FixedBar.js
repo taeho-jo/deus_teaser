@@ -116,7 +116,6 @@ const Div = styled.div`
   font-size: 12px;
   letter-spacing: 0;
   font-family: visbyRegular;
-  /* margin-left: 5px; */
 `;
 const CountDownBox = styled.div`
   background: #048baa;
@@ -155,7 +154,6 @@ const SubscribeText = styled.h1`
 `;
 
 const FlexBox = styled.div`
-  /* justify-content: space-between; */
   align-items: center;
   display: flex;
 `;

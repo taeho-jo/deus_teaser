@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
+
 import Box from "./InfoBox/Box";
+
 import icon1 from "../../images/pros_ico1.svg";
 import icon2 from "../../images/pros_ico2.svg";
 import icon3 from "../../images/pros_ico3.svg";
 import icon4 from "../../images/pros_ico4.svg";
-import { withTranslation } from "react-i18next";
 
 const InfoBox = ({ t }) => {
   return (
@@ -25,7 +27,6 @@ export default withTranslation()(InfoBox);
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  /* border: 1px solid orange; */
 `;
 
 const Div = styled.div`
@@ -33,7 +34,6 @@ const Div = styled.div`
   max-width: 1100px;
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid orange; */
   @media (max-width: 1024px) {
     flex-direction: column;
     padding: 0 30px;

@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
+import { withTranslation } from "react-i18next";
+
 import TravelerLayout from "../../components/Layout/TravelerLayout";
-import LogoImg from "../../images/logo_white.svg";
 import Top from "../../components/Main/Top";
-import background from "../../images/head_img_partner.jpg";
+import Mid from "../../components/Main/Mid";
 import PartnerSecondMidText from "../../components/Main/SecondMidText/PartnerSecondMid";
 import PartnerInfoBox from "../../components/Main/PartnerInfoBox";
 import Contact from "../../components/Main/Contact";
-import Mid from "../../components/Main/Mid";
-import ready from "../../images/ready_img.jpg";
 import NextPage from "../../components/Main/NextPage";
-import traveler from "../../images/head_img_partner2.jpg";
 import Footer from "../../components/Main/Footer";
 import FixedBar from "../../components/FixedBar";
-import { withTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
-import error from "../../images/error.png";
 import fetchAPI from "../../Utils/fetch";
+
+import traveler from "../../images/head_img_partner2.jpg";
+import LogoImg from "../../images/logo_white.svg";
+import background from "../../images/head_img_partner.jpg";
+import ready from "../../images/ready_img.jpg";
+import error from "../../images/error.png";
 import check from "../../images/check.png";
 
-const MainPartner = ({ t }) => {
+const MainPartner = ({ t, i18n, history }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState(null);
   const [traveller, setTraveller] = useState(1);
   const [provier, setProvider] = useState(0);
 
-  let history = useHistory();
   const movePage = () => {
     history.push("/");
   };
@@ -77,6 +78,7 @@ const MainPartner = ({ t }) => {
       setProvider(1);
     }
   }, []);
+
   return (
     <>
       <Div>
@@ -104,12 +106,13 @@ const MainPartner = ({ t }) => {
         background={ready}
       />
       <NextPage
+        href={movePage}
         partner={traveler}
         title={t("areyoutraveler")}
         content={t("join")}
         button={t("iamtraveler")}
       />
-      <Footer text={t("areyoutraveler")} />
+      <Footer href={movePage} text={t("areyoutraveler")} />
       <FixedBar onChange={changeEmail} onClick={submited} />
       {isClicked && (
         <Modal
@@ -134,7 +137,7 @@ const MainPartner = ({ t }) => {
   );
 };
 
-export default withTranslation()(MainPartner);
+export default withTranslation()(withRouter(MainPartner));
 
 const Div = styled.div`
   height: 500px;

@@ -71,6 +71,5 @@ const P = styled.p`
   color: ${props => props.color};
   @media (max-width: 414px) {
     font-size: 12px;
-    /* line-height: 35px; */
   }
 `;

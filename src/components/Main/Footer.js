@@ -12,10 +12,13 @@ const Footer = ({ href, text, t }) => {
           <LeftContact>{t("phone")}/WhatsApp +82 10 4729 9389</LeftContact>
         </LeftBox>
         <RightBox>
-          <RightContact>
-            <A size="15px" pointer="pointer" color="#00a3c8" href={href}>
-              {text}
-            </A>
+          <RightContact
+            size="15px"
+            pointer="pointer"
+            color="#00a3c8"
+            onClick={href}
+          >
+            {text}
           </RightContact>
           <RightContact size="13px;">
             2019 Deus Adventures © All Rights Reserved.
@@ -74,9 +77,15 @@ const RightBox = styled.div`
 const RightContact = styled.p`
   text-align: right;
   font-size: ${props => props.size};
+  color: ${props => props.color};
+  font-size: ${props => props.size};
+  cursor: ${props => props.pointer};
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: normal;
   margin-top: 10px;
+  :hover {
+    color: #025a6f;
+  }
   @media (max-width: 1024px) {
     text-align: center;
   }

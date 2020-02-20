@@ -7,7 +7,7 @@ const NextPage = ({ partner, title, content, button, href }) => {
       <Box>
         <Title>{title}</Title>
         <Contents>{content}</Contents>
-        <Button href={href}>{button}</Button>
+        <Button onClick={href}>{button}</Button>
       </Box>
     </Container>
   );
@@ -22,14 +22,12 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
 `;
 const Box = styled.div`
   padding: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* border: 1px solid black; */
 `;
 const Title = styled.h1`
   font-size: 35px;
@@ -47,8 +45,7 @@ const Contents = styled.p`
   letter-spacing: normal;
   font-family: "Noto Sans KR", sans-serif;
 `;
-
-const Button = styled.a`
+const Button = styled.button`
   padding: 20px;
   color: #fff;
   background: #00a3c8;

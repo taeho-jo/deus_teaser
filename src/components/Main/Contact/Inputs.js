@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
+
 import Modal from "../../Modal/Modal";
 import fetchAPI from "../../../Utils/fetch";
+
 import error from "../../../images/error.png";
 import check from "../../../images/check.png";
-import { withTranslation } from "react-i18next";
 
 const Inputs = ({ marginTop, t }) => {
   const [name, setName] = useState(null);
@@ -95,14 +97,14 @@ const Inputs = ({ marginTop, t }) => {
           value={phoneNumber}
           onChange={changePhoneNumber}
           placeholder={t("phonePlaceholder")}
-        ></Input>
+        />
 
         <InputName marginTop="30px">{t("email")}</InputName>
         <Input
           value={email}
           onChange={changeEmaill}
           placeholder={t("emailPlaceholder")}
-        ></Input>
+        />
 
         <InputName marginTop="30px">{t("contentText")}</InputName>
         <TextArea value={content} onChange={changeContent} />
@@ -141,34 +143,31 @@ const Container = styled.div`
 
 const InputName = styled.p`
   margin-bottom: 15px;
+  margin-top: ${props => props.marginTop};
   font-size: 15px;
   font-family: "Noto Sans KR", sans-serif;
-  margin-top: ${props => props.marginTop};
 `;
 
 const Input = styled.input`
   width: 520px;
-  padding: 15px;
   border: 1px solid #ebeded;
   border-radius: 5px;
+  padding: 15px;
   outline: #00a3c8;
   :focus {
     border: 1px solid #00a3c8;
     transition: border 0.3s ease-in-out;
   }
-
   ::placeholder {
     font-size: 13px;
   }
   @media (max-width: 1024px) {
     width: 100%;
-    /* padding: 15px; */
     box-sizing: border-box;
   }
 `;
 
 const TextArea = styled.textarea`
-  /* margin-top: 30px; */
   width: 520px;
   height: 200px;
   border: 1px solid #ebeded;
@@ -188,12 +187,12 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   padding: 20px;
-  color: #fff;
-  background: #00a3c8;
-  border-radius: 5px;
-  font-size: 15px;
   margin: 30px auto 0;
+  background: #00a3c8;
   border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
   outline: none;
   cursor: pointer;
   :hover {

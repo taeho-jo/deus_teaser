@@ -1,7 +1,8 @@
 import React from "react";
-import movie from "../../video/web_video.mp4";
 import styled from "styled-components";
-import aaa from "../../images/head_img.jpg";
+
+import movie from "../../video/web_video.mp4";
+import image from "../../images/head_img.jpg";
 
 const Vid = () => {
   return (
@@ -29,7 +30,7 @@ const Video = styled.video`
 const Image = styled.div`
   display: none;
   @media (max-width: 768px) {
-    background-image: url(${aaa});
+    background-image: url(${image});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right center;

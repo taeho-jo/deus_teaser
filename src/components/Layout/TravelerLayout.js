@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import usa from "../../images/usa.png";
-import kor from "../../images/kor.png";
 import { withTranslation } from "react-i18next";
+
+import kor from "../../images/kor.png";
+import usa from "../../images/usa.png";
 
 const TravelerLayout = ({ onClick, text, LogoImg, color, t, i18n }) => {
   const [click, setClick] = useState(false);

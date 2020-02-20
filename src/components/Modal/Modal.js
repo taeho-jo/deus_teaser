@@ -48,7 +48,6 @@ const Div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
 `;
 const ErrorBox = styled.div`
   color: ${props => props.color};
