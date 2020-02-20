@@ -94,7 +94,7 @@ const SubTitle = styled.h2`
   letter-spacing: normal;
   font-family: "Noto Sans KR", sans-serif;
   @media (max-width: 414px) {
-    letter-spacing: -1px;
+    letter-spacing: 0px;
     line-height: 1.3;
   }
 `;
@@ -104,9 +104,9 @@ const Content = styled.p`
   letter-spacing: normal;
   font-family: "Noto Sans KR", sans-serif;
   @media (max-width: 414px) {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.5;
-    letter-spacing: -1px;
+    letter-spacing: 0px;
   }
 `;
 const ImageContainer = styled.div`

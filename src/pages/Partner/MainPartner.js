@@ -114,7 +114,7 @@ const MainPartner = ({ t, i18n, history }) => {
           <Lang left="-30px" lang={usa} alt="usa" onClick={originLang} />
           <Lang lang={kor} alt="kor" onClick={selectLang} />
           <MenuText>{t("subscribe")}</MenuText>
-          <MenuText onClick={movePage}>{t("bePartner")}</MenuText>
+          <MenuText onClick={movePage}>{t("areyoutraveler")}</MenuText>
         </TravelerLayout>
         <Top
           color="#ffffff"

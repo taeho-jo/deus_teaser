@@ -73,7 +73,7 @@ const P = styled.p`
   letter-spacing: normal;
   color: ${props => props.color};
   @media (max-width: 414px) {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: bold;
   }
 `;
