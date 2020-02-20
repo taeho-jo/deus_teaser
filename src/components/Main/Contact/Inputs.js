@@ -114,7 +114,7 @@ const Inputs = ({ marginTop, t }) => {
         <Modal
           error="Completed"
           color="#00ace6;"
-          please="Your question has been forwarded"
+          please={t("contactMessage")}
           background={check}
           onClick={closed}
         />

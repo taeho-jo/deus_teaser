@@ -146,7 +146,7 @@ const MainPartner = ({ t, i18n, history }) => {
         <Modal
           error="Completed"
           color="#00ace6;"
-          please="Your question has been forwarded"
+          please={t("subscibeMessage")}
           background={check}
           onClick={closed}
         />
