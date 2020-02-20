@@ -146,7 +146,7 @@ const MainPartner = ({ t, i18n, history }) => {
         <Modal
           error="Completed"
           color="#00ace6;"
-          please={t("subscibeMessage")}
+          please={t("subscribeMessage")}
           background={check}
           onClick={closed}
         />
