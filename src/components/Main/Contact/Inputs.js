@@ -34,10 +34,6 @@ const Inputs = ({ marginTop, t }) => {
   const closed = () => {
     setIsClicked(false);
     setIsError(false);
-    setName(null);
-    setPhoneNumber(null);
-    setEmail(null);
-    setContent(null);
   };
 
   const submit = () => {
@@ -57,17 +53,21 @@ const Inputs = ({ marginTop, t }) => {
           is_supplier: provier,
           is_traveler: traveller
         })
-      }).then(res => {
-        if (res.message === "SUCCESS") {
-          setIsClicked(true);
-          setName("");
-          setPhoneNumber("");
-          setEmail("");
-          setContent("");
-        } else {
-          setIsError(true);
-        }
-      });
+      })
+        .then(res => {
+          if (res.message === "SUCCESS") {
+            setIsClicked(true);
+            setName("");
+            setPhoneNumber("");
+            setEmail("");
+            setContent("");
+          } else {
+            setIsError(true);
+          }
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
     }
   };
 
