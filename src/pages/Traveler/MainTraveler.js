@@ -24,6 +24,7 @@ import check from "../../images/check.png";
 import LogoImg from "../../images/logo.svg";
 import kor from "../../images/kor.png";
 import usa from "../../images/usa.png";
+
 const MainTraveler = ({ t, history, i18n }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -32,18 +33,9 @@ const MainTraveler = ({ t, history, i18n }) => {
   const [provier, setProvider] = useState(0);
   const [changeLang, setChangeLang] = useState("");
 
-  // let locale = window.localStorage.getItem("lang");
-  // const locale = window.localStorage.getItem("lang");
-  // console.log(locale);
-
   useEffect(() => {
     window.localStorage.setItem("lang", changeLang);
-    setChangeLang();
   }, [changeLang]);
-
-  // useEffect(() => {
-  //   window.localStorage.getItem("lang");
-  // }, [changeLang]);
 
   useEffect(() => {
     const url = window.location.href;
@@ -108,22 +100,9 @@ const MainTraveler = ({ t, history, i18n }) => {
 
   return (
     <>
-      <TravelerLayout
-        LogoImg={LogoImg}
-        onClick={movePage}
-        change={selectLang}
-        change1={originLang}
-        text={t("bePartner")}
-      >
-        {/* {changeLang === "" && (
-          <Lang lang={usa} alt="usa" onClick={selectLang} />
-        )} */}
-        {window.localStorage.getItem("lang") === "ko" && (
-          <Lang lang={kor} alt="kor" onClick={originLang} />
-        )}
-        {window.localStorage.getItem("lang") === "en" && (
-          <Lang lang={usa} alt="usa" onClick={selectLang} />
-        )}
+      <TravelerLayout LogoImg={LogoImg} text={t("bePartner")}>
+        <Lang left="-30px" lang={usa} alt="usa" onClick={originLang} />
+        <Lang lang={kor} alt="kor" onClick={selectLang} />
         <MenuText>{t("subscribe")}</MenuText>
         <MenuText onClick={movePage}>{t("bePartner")}</MenuText>
       </TravelerLayout>
@@ -133,6 +112,7 @@ const MainTraveler = ({ t, history, i18n }) => {
         subTitle={t("mainSubTitle")}
         content={t("mainContent")}
       />
+
       <Vid />
       <Mid
         firstTitle={t("midTitle")}
@@ -196,6 +176,7 @@ const Lang = styled.div`
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
+  left: ${props => props.left};
   @media (max-width: 1024px) {
     display: none;
   }

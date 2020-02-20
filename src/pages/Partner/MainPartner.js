@@ -110,21 +110,9 @@ const MainPartner = ({ t, i18n, history }) => {
   return (
     <>
       <Div>
-        <TravelerLayout
-          onClick={movePage}
-          color="#ffffff"
-          LogoImg={LogoImg}
-          text={t("areyoutraveler")}
-        >
-          {changeLang === "" && (
-            <Lang lang={usa} alt="usa" onClick={selectLang} />
-          )}
-          {changeLang === "ko" && (
-            <Lang lang={kor} alt="kor" onClick={originLang} />
-          )}
-          {changeLang === "en" && (
-            <Lang lang={usa} alt="usa" onClick={selectLang} />
-          )}
+        <TravelerLayout LogoImg={LogoImg} text={t("areyoutraveler")}>
+          <Lang left="-30px" lang={usa} alt="usa" onClick={originLang} />
+          <Lang lang={kor} alt="kor" onClick={selectLang} />
           <MenuText>{t("subscribe")}</MenuText>
           <MenuText onClick={movePage}>{t("bePartner")}</MenuText>
         </TravelerLayout>
@@ -181,7 +169,6 @@ export default withTranslation()(withRouter(MainPartner));
 
 const Div = styled.div`
   height: 500px;
-  /* width: 100%; */
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
@@ -200,6 +187,7 @@ const Lang = styled.div`
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
+  left: ${props => props.left};
   @media (max-width: 1024px) {
     display: none;
   }
