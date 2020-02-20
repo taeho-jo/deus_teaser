@@ -60,15 +60,15 @@ const Inputs = ({ marginTop, t }) => {
       }).then(res => {
         if (res.message === "SUCCESS") {
           setIsClicked(true);
+          setName("");
+          setPhoneNumber("");
+          setEmail("");
+          setContent("");
         } else {
           setIsError(true);
         }
       });
     }
-    setName("");
-    setPhoneNumber("");
-    setEmail("");
-    setContent("");
   };
 
   useEffect(() => {
@@ -94,6 +94,7 @@ const Inputs = ({ marginTop, t }) => {
 
         <InputName marginTop="30px">{t("phone")}</InputName>
         <Input
+          type="number"
           value={phoneNumber}
           onChange={changePhoneNumber}
           placeholder={t("phonePlaceholder")}
@@ -101,6 +102,7 @@ const Inputs = ({ marginTop, t }) => {
 
         <InputName marginTop="30px">{t("email")}</InputName>
         <Input
+          type="email"
           value={email}
           onChange={changeEmaill}
           placeholder={t("emailPlaceholder")}
