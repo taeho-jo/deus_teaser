@@ -90,16 +90,3 @@ const RightContact = styled.p`
     text-align: center;
   }
 `;
-
-const A = styled.a`
-  text-decoration: none;
-  text-align: right;
-  color: ${props => props.color};
-  font-size: ${props => props.size};
-  font-family: "Noto Sans KR", sans-serif;
-  cursor: ${props => props.pointer};
-  letter-spacing: normal;
-  :hover {
-    color: #025a6f;
-  }
-`;
