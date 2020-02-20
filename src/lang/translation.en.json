@@ -42,7 +42,7 @@
   "readyText2": "Do access your own trip with confidence.",
   "join": "Join us for a greater journey!",
   "joinPartner": "Become a Partner",
-  "openSoon": "Meet DeusAdventures on April 1, 2019",
+  "openSoon": "Meet DeusAdventures on April 1, 2020",
   "day": "Day",
   "Hours": "Hrs",
   "min": "Min",
@@ -61,5 +61,7 @@
   "icon7": "Automated Reservation Management",
   "icon8": "Real-time customer care service through online",
   "icon9": "Simplified Payout System",
-  "iamtraveler": "I'm a traveler"
+  "iamtraveler": "I'm a traveler",
+  "contactMessage": "Your question has been forwarded",
+  "subscribeMessage": "I will let you know when it Launches"
 }

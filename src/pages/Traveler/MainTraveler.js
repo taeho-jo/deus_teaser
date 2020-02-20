@@ -146,7 +146,7 @@ const MainTraveler = ({ t, history, i18n }) => {
         <Modal
           error="Completed"
           color="#00ace6;"
-          please="Your question has been forwarded"
+          please={t("subscribeMessage")}
           background={check}
           onClick={closed}
         />

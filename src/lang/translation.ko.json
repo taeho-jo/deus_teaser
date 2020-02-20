@@ -61,5 +61,7 @@
   "icon7": "자동 예약 관리",
   "icon8": "온라인을 통한 실시간 고객 관리 서비스",
   "icon9": "단순화 된 지불 시스템",
-  "iamtraveler": "여행자입니다"
+  "iamtraveler": "여행자입니다",
+  "contactMessage": "문의사항이 등록되었습니다",
+  "subscribeMessage": "런칭되면 연락드리겠습니다"
 }

@@ -8,7 +8,7 @@ const Footer = ({ href, text, t }) => {
       <Div>
         <LeftBox>
           <LeftContact>DeusAdventures. Inc.</LeftContact>
-          <LeftContact>{t("email")} LeftContact@deusadventures.com</LeftContact>
+          <LeftContact>{t("email")} Contact@deusadventures.com</LeftContact>
           <LeftContact>{t("phone")}/WhatsApp +82 10 4729 9389</LeftContact>
         </LeftBox>
         <RightBox>
@@ -21,7 +21,7 @@ const Footer = ({ href, text, t }) => {
             {text}
           </RightContact>
           <RightContact size="13px;">
-            2019 Deus Adventures © All Rights Reserved.
+            2020 Deus Adventures © All Rights Reserved.
           </RightContact>
         </RightBox>
       </Div>
