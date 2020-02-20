@@ -63,5 +63,7 @@
   "icon9": "Simplified Payout System",
   "iamtraveler": "I'm a traveler",
   "contactMessage": "Your question has been forwarded",
-  "subscribeMessage": "I will let you know when it Launches"
+  "subscribeMessage": "I will let you know when it Launches",
+  "star": "*",
+  "required": "Required"
 }

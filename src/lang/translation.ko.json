@@ -63,5 +63,7 @@
   "icon9": "단순화 된 지불 시스템",
   "iamtraveler": "여행자입니다",
   "contactMessage": "문의사항이 등록되었습니다",
-  "subscribeMessage": "런칭되면 연락드리겠습니다"
+  "subscribeMessage": "런칭되면 연락드리겠습니다",
+  "star": "*",
+  "required": "필수입력"
 }

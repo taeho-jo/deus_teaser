@@ -85,7 +85,10 @@ const Inputs = ({ marginTop, t }) => {
   return (
     <>
       <Container>
-        <InputName marginTop={marginTop}>{t("name")}</InputName>
+        <InputName marginTop={marginTop}>
+          <Required>{t("star")}</Required>&nbsp;
+          {t("name")}&nbsp;&nbsp;&nbsp;<Required>{t("required")}</Required>
+        </InputName>
         <Input
           value={name}
           onChange={changeName}
@@ -100,7 +103,10 @@ const Inputs = ({ marginTop, t }) => {
           placeholder={t("phonePlaceholder")}
         />
 
-        <InputName marginTop="30px">{t("email")}</InputName>
+        <InputName marginTop="30px">
+          <Required>{t("star")}</Required>&nbsp;
+          {t("email")}&nbsp;&nbsp;&nbsp;<Required>{t("required")}</Required>
+        </InputName>
         <Input
           type="email"
           value={email}
@@ -108,7 +114,11 @@ const Inputs = ({ marginTop, t }) => {
           placeholder={t("emailPlaceholder")}
         />
 
-        <InputName marginTop="30px">{t("contentText")}</InputName>
+        <InputName marginTop="30px">
+          <Required>{t("star")}</Required>&nbsp;
+          {t("contentText")}&nbsp;&nbsp;&nbsp;
+          <Required>{t("required")}</Required>
+        </InputName>
         <TextArea value={content} onChange={changeContent} />
         <Button onClick={submit}>{t("sendMsg")}</Button>
       </Container>
@@ -148,6 +158,11 @@ const InputName = styled.p`
   margin-top: ${props => props.marginTop};
   font-size: 15px;
   font-family: "Noto Sans KR", sans-serif;
+`;
+const Required = styled.span`
+  color: red;
+  font-weight: bold;
+  font-size: 10px;
 `;
 
 const Input = styled.input`
