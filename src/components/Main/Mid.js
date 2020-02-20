@@ -44,6 +44,9 @@ const Container = styled.div`
   @media (max-width: 1024px) {
     padding: 60px 30px;
   }
+  @media (max-width: 414px) {
+    padding: 30px 30px;
+  }
 `;
 
 const Div = styled.div`
@@ -52,6 +55,8 @@ const Div = styled.div`
   display: flex;
   @media (max-width: 1024px) {
     flex-direction: column;
+  }
+  @media (maxt-width: 414px) {
   }
 `;
 
@@ -76,6 +81,10 @@ const Title = styled.h1`
     font-weight: bold;
     letter-spacing: normal;
   }
+  @media (max-width: 414px) {
+    font-size: 25px;
+    line-height: 30px;
+  }
 `;
 const SubTitle = styled.h2`
   font-size: 16px;
@@ -84,7 +93,9 @@ const SubTitle = styled.h2`
   margin: 20px 0;
   letter-spacing: normal;
   font-family: "Noto Sans KR", sans-serif;
-  @media (max-width: 1024px) {
+  @media (max-width: 414px) {
+    letter-spacing: -1px;
+    line-height: 1.3;
   }
 `;
 const Content = styled.p`
@@ -92,6 +103,11 @@ const Content = styled.p`
   line-height: 30px;
   letter-spacing: normal;
   font-family: "Noto Sans KR", sans-serif;
+  @media (max-width: 414px) {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
 `;
 const ImageContainer = styled.div`
   width: 50%;
@@ -106,5 +122,8 @@ const ImageContainer = styled.div`
     margin-left: 0;
     background-position: center center;
     margin-top: 20px;
+  }
+  @media (max-width: 414px) {
+    width: 100%;
   }
 `;

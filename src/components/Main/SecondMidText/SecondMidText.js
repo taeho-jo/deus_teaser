@@ -36,7 +36,7 @@ const SecondMidText = ({ content, content1, content2, t }) => {
         <Div>
           <TitleBox>
             <ColorTitle>
-              {t("lowPrice")}&nbsp;
+              {t("lowPrice")}
               <Title>{t("lowPrice2")}</Title>
             </ColorTitle>
             <Content>{content2}</Content>
@@ -65,6 +65,9 @@ const Div = styled.div`
   @media (max-width: 1024px) {
     padding: 0 30px;
   }
+  /* @media (max-width: 414px) {
+    padding:
+  } */
 `;
 const TitleBox = styled.div`
   font-family: visbyHeavy;

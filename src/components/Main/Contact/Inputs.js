@@ -44,7 +44,7 @@ const Inputs = ({ marginTop, t }) => {
     if (name === null || email === null || content === null) {
       setIsError(true);
     } else {
-      fetchAPI("http://10.58.0.131:8000/user/contact", {
+      fetchAPI("http://52.79.234.43:8000/user/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

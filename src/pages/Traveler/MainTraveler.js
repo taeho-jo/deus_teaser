@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
@@ -21,15 +22,50 @@ import error from "../../images/error.png";
 import firstImg from "../../images/first_img.jpg";
 import check from "../../images/check.png";
 import LogoImg from "../../images/logo.svg";
-
-const MainTraveler = ({ t, history }) => {
+import kor from "../../images/kor.png";
+import usa from "../../images/usa.png";
+const MainTraveler = ({ t, history, i18n }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isError, setIsError] = useState(false);
   const [email, setEmail] = useState(null);
   const [traveller, setTraveller] = useState(1);
   const [provier, setProvider] = useState(0);
+  const [changeLang, setChangeLang] = useState("");
 
-  // let history = useHistory();
+  // let locale = window.localStorage.getItem("lang");
+  // const locale = window.localStorage.getItem("lang");
+  // console.log(locale);
+
+  useEffect(() => {
+    window.localStorage.setItem("lang", changeLang);
+    setChangeLang();
+  }, [changeLang]);
+
+  // useEffect(() => {
+  //   window.localStorage.getItem("lang");
+  // }, [changeLang]);
+
+  useEffect(() => {
+    const url = window.location.href;
+    if (url === "http://localhost:3000/") {
+      setTraveller(1);
+      setProvider(0);
+    } else {
+      setTraveller(0);
+      setProvider(1);
+    }
+  }, []);
+
+  const selectLang = () => {
+    setChangeLang("ko");
+    i18n.changeLanguage("ko-KR");
+  };
+
+  const originLang = () => {
+    setChangeLang("en");
+    i18n.changeLanguage("en-US");
+  };
+
   const movePage = () => {
     history.push("/partner");
   };
@@ -38,7 +74,7 @@ const MainTraveler = ({ t, history }) => {
     if (email === null) {
       setIsError(true);
     } else {
-      fetchAPI("http://10.58.0.131:8000/user/subscription", {
+      fetchAPI("http://52.79.234.43:8000/user/subscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -70,24 +106,27 @@ const MainTraveler = ({ t, history }) => {
     setIsError(false);
   };
 
-  useEffect(() => {
-    const url = window.location.href;
-    if (url === "http://localhost:3000/") {
-      setTraveller(1);
-      setProvider(0);
-    } else {
-      setTraveller(0);
-      setProvider(1);
-    }
-  }, []);
-
   return (
     <>
       <TravelerLayout
         LogoImg={LogoImg}
         onClick={movePage}
+        change={selectLang}
+        change1={originLang}
         text={t("bePartner")}
-      />
+      >
+        {/* {changeLang === "" && (
+          <Lang lang={usa} alt="usa" onClick={selectLang} />
+        )} */}
+        {window.localStorage.getItem("lang") === "ko" && (
+          <Lang lang={kor} alt="kor" onClick={originLang} />
+        )}
+        {window.localStorage.getItem("lang") === "en" && (
+          <Lang lang={usa} alt="usa" onClick={selectLang} />
+        )}
+        <MenuText>{t("subscribe")}</MenuText>
+        <MenuText onClick={movePage}>{t("bePartner")}</MenuText>
+      </TravelerLayout>
       <Top
         firsTitle={t("mainTitle")}
         secondTitle={t("mainTitle.2")}
@@ -147,3 +186,31 @@ const MainTraveler = ({ t, history }) => {
 };
 
 export default withTranslation()(withRouter(MainTraveler));
+
+const Lang = styled.div`
+  width: 20px;
+  height: 20px;
+  background-image: url(${props => props.lang});
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+const MenuText = styled.p`
+  min-width: 150px;
+  color: ${props => props.color};
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: normal;
+  font-family: "Noto Sans KR", sans-serif;
+  :hover {
+    color: #00a3c8;
+    transition: 0.2s ease-in-out;
+  }
+`;

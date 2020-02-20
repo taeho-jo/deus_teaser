@@ -21,6 +21,8 @@ import background from "../../images/head_img_partner.jpg";
 import ready from "../../images/ready_img.jpg";
 import error from "../../images/error.png";
 import check from "../../images/check.png";
+import kor from "../../images/kor.png";
+import usa from "../../images/usa.png";
 
 const MainPartner = ({ t, i18n, history }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -28,6 +30,32 @@ const MainPartner = ({ t, i18n, history }) => {
   const [email, setEmail] = useState(null);
   const [traveller, setTraveller] = useState(1);
   const [provier, setProvider] = useState(0);
+  const [changeLang, setChangeLang] = useState("");
+
+  useEffect(() => {
+    window.localStorage.setItem("lang", changeLang);
+  }, [changeLang]);
+
+  useEffect(() => {
+    const url = window.location.href;
+    if (url === "http://localhost:3000/") {
+      setTraveller(1);
+      setProvider(0);
+    } else {
+      setTraveller(0);
+      setProvider(1);
+    }
+  }, []);
+
+  const selectLang = () => {
+    setChangeLang("ko");
+    i18n.changeLanguage("ko-KR");
+  };
+
+  const originLang = () => {
+    setChangeLang("en");
+    i18n.changeLanguage("en-US");
+  };
 
   const movePage = () => {
     history.push("/");
@@ -37,7 +65,7 @@ const MainPartner = ({ t, i18n, history }) => {
     if (email === null) {
       setIsError(true);
     } else {
-      fetchAPI("http://10.58.0.131:8000/user/subscription", {
+      fetchAPI("http://52.79.234.43:8000/user/subscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -87,7 +115,19 @@ const MainPartner = ({ t, i18n, history }) => {
           color="#ffffff"
           LogoImg={LogoImg}
           text={t("areyoutraveler")}
-        />
+        >
+          {changeLang === "" && (
+            <Lang lang={usa} alt="usa" onClick={selectLang} />
+          )}
+          {changeLang === "ko" && (
+            <Lang lang={kor} alt="kor" onClick={originLang} />
+          )}
+          {changeLang === "en" && (
+            <Lang lang={usa} alt="usa" onClick={selectLang} />
+          )}
+          <MenuText>{t("subscribe")}</MenuText>
+          <MenuText onClick={movePage}>{t("bePartner")}</MenuText>
+        </TravelerLayout>
         <Top
           color="#ffffff"
           firsTitle={t("own")}
@@ -145,4 +185,36 @@ const Div = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 414px) {
+    heihgt: 300px;
+    width: 100%;
+    background-position: center center;
+  }
+`;
+const Lang = styled.div`
+  width: 20px;
+  height: 20px;
+  background-image: url(${props => props.lang});
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+const MenuText = styled.p`
+  min-width: 150px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: normal;
+  font-family: "Noto Sans KR", sans-serif;
+  :hover {
+    color: #00a3c8;
+    transition: 0.2s ease-in-out;
+  }
 `;

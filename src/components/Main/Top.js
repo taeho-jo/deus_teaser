@@ -28,6 +28,9 @@ const Container = styled.div`
   @media (max-width: 1024px) {
     padding: 60px 30px;
   }
+  @media (max-width: 414px) {
+    padding: 40px 30px 30px;
+  }
 `;
 
 const Div = styled.div`
@@ -44,7 +47,7 @@ const Title = styled.h1`
   font-weight: bold;
   letter-spacing: normal;
   @media (max-width: 414px) {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 30px;
   }
 `;
@@ -59,7 +62,7 @@ const SubTitle = styled.h2`
   font-size: 20px;
   letter-spacing: normal;
   @media (max-width: 414px) {
-    font-size: 15px;
+    font-size: 17px;
   }
 `;
 
@@ -70,6 +73,7 @@ const P = styled.p`
   letter-spacing: normal;
   color: ${props => props.color};
   @media (max-width: 414px) {
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: bold;
   }
 `;
